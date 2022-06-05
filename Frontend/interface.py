@@ -56,6 +56,16 @@ entry4.grid(row=1, column=1)
 '''
 
 # Text
+titleLabel = Label(root, text="AGE CALCULATOR APP")
+titleLabel.grid(row=1, column=2)
 
+yearLabel = Label(root, text="What year were you born? (e.g. 1876, 1999, 2004, etc) ")
+yearLabel.grid(row=2, column=1)
+
+monthLabel = Label(root, text="What month were you born? (e.g. January, March, July, etc) ")
+monthLabel.grid(row=3, column=1)
+
+dayLabel = Label(root, text="What day were you born? (e.g. 1, 5, 16, 31, etc) ")
+dayLabel.grid(row=4, column=1)
 
 mainloop()
