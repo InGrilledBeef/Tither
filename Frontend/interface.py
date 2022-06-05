@@ -21,8 +21,9 @@ def resizeImg(path):
 image1 = resizeImg("images/1.png")
 my_img1 = ImageTk.PhotoImage(image1)
 my_label1 = Label(image=my_img1)
-my_label1.grid(row=0, column=0)
+my_label1.grid(row=0, column=0, columnspan=7, rowspan=8)
 
+'''
 image2 = resizeImg("images/2.png")
 my_img2 = ImageTk.PhotoImage(image2)
 my_label2 = Label(image=my_img2)
@@ -37,12 +38,13 @@ image4 = resizeImg("images/4.png")
 my_img4 = ImageTk.PhotoImage(image4)
 my_label4 = Label(image=my_img4)
 my_label4.grid(row=1, column=1)
-
+'''
 
 # ENTRY BOXES
-entry1 = Entry(root, width = "50")
-entry1.grid(row=0, column=0)
+entry1 = Entry(root, width = "30")
+entry1.grid(row=0, column=3, columnspan=4)
 
+'''
 entry2 = Entry(root, width = "50")
 entry2.grid(row=0, column=1)
 
@@ -51,6 +53,9 @@ entry3.grid(row=1, column=0)
 
 entry4 = Entry(root, width = "50")
 entry4.grid(row=1, column=1)
+'''
+
+# Text
 
 
 mainloop()
