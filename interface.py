@@ -6,7 +6,7 @@ from tkinter import *
 from PIL import ImageTk, Image
 import tkinter.font as font
 from tkinter import messagebox
-from Backend.weather import *
+from src.weather import *
 
 # Start Window
 root = Tk()
@@ -58,11 +58,12 @@ entry4.grid(row=1, column=1)
 '''
 
 def submit(location):
-    wList = getWeather(str(location))
+    print(location)
+    #wList = getWeather(str(location))
 
     # Location Labels
-    tempLabel1 = Label(root, text=str(wList[0]))
-    tempLabel1.grid(row=1, column=5)
+    #tempLabel1 = Label(root, text=str(wList[0]))
+    #tempLabel1.grid(row=1, column=5)
 
     '''
     flLabel1 = Label(root, text=str(wList[1]))
@@ -80,7 +81,7 @@ def submit(location):
     humidityLabel = Label(root, text=str(wList[5]))
     humidityLabel.grid(row=6, column=5)
     '''
-    return wList
+    #return wList
 
 # SUBMIT BUTTON
 submit_btn1 = Button(root, text="SUBMIT", command=lambda: submit(entry1))

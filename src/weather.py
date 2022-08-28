@@ -33,4 +33,6 @@ def getWeather(location):
     #jprint(info.json())
     wList.append(info.json()[0]["temp"])
 
-    return info.json()
+    return wList
+
+print(getWeather("Thornhill"))
