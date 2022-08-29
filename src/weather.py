@@ -15,6 +15,10 @@ def jprint(obj):
     text = json.dumps(obj, sort_keys=True, indent=4)
     print(text)
 
+def jtext(obj):
+    text = json.dumps(obj, sort_keys=True, indent=4)
+    return text
+
 def getWeather(location):
     wList = []
     
@@ -31,8 +35,9 @@ def getWeather(location):
     info = requests.get(response2);
 
     #jprint(info.json())
-    wList.append(info.json()[0]["temp"])
+    #jprint(int(info.json()["main"]["temp"])-273)
+    wList.append(jtext(int(info.json()["main"]["temp"])-273))
 
     return wList
 
-print(getWeather("Thornhill"))
+#print(getWeather("Thornhill"))

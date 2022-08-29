@@ -58,12 +58,12 @@ entry4.grid(row=1, column=1)
 '''
 
 def submit(location):
-    print(location)
-    #wList = getWeather(str(location))
+    wList = getWeather(location)
+    print(wList)
 
-    # Location Labels
-    #tempLabel1 = Label(root, text=str(wList[0]))
-    #tempLabel1.grid(row=1, column=5)
+    # Location Labels (use config function)
+    tempLabel1 = Label(root, text=str(wList[0])+' C')
+    tempLabel1.grid(row=1, column=5)
 
     '''
     flLabel1 = Label(root, text=str(wList[1]))
@@ -84,7 +84,7 @@ def submit(location):
     #return wList
 
 # SUBMIT BUTTON
-submit_btn1 = Button(root, text="SUBMIT", command=lambda: submit(entry1))
+submit_btn1 = Button(root, text="SUBMIT", command=lambda: submit(entry1.get()))
 submit_btn1.grid(row=8, column=3)
 
 # Text Labels
