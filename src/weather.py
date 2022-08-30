@@ -37,12 +37,11 @@ def getWeather(location):
     response2 = "https://api.openweathermap.org/data/2.5/weather?lat=" + str(lat) + "&lon=" + str(lon) + "&appid=" + apiKey
 
     info = requests.get(response2);
-
-    #jprint(info.json())
-    #jprint(int(info.json()["main"]["temp"])-273)
+    
     wList.append(jtext(int(info.json()["main"]["temp"])-273))
     wList.append(jtext(int(info.json()["main"]["feels_like"])-273))
-
+    wList.append(jtext(int(info.json()["main"]["temp_min"])-273))
+    wList.append(jtext(int(info.json()["main"]["temp_max"])-273))
+    wList.append(jtext(int(info.json()["main"]["pressure"])))
+    wList.append(jtext(int(info.json()["main"]["humidity"])))
     return wList
-
-#print(getWeather("Thornhill"))

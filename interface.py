@@ -58,32 +58,17 @@ entry4.grid(row=1, column=1)
 '''
 
 def submit(location):
+    # Changes weather labels (make function pass in a var for the label that it should be changing)
     wList = getWeather(location)
     print(wList)
 
-    # Location Labels (use config function)
-    #tempLabel1 = Label(root, text=str(wList[0])+' C')
-    #tempLabel1.grid(row=1, column=5)
-
+    # Location Labels
     tempLabel1.config(text = "Temperature: " + str(wList[0])+' C')
     flLabel1.config(text="Feels Like: " + str(wList[1]) + ' C')
-    '''
-    flLabel1 = Label(root, text=str(wList[1]))
-    flLabel1.grid(row=2, column=5)
-
-    tempMinLabel1 = Label(root, text=str(wList[2]))
-    tempMinLabel1.grid(row=3, column=5)
-
-    tempMaxLabel1 = Label(root, text=str(wList[3]))
-    tempMaxLabel1.grid(row=4, column=5)
-
-    pressureLabel = Label(root, text=str(wList[4]))
-    pressureLabel.grid(row=5, column=5)
-
-    humidityLabel = Label(root, text=str(wList[5]))
-    humidityLabel.grid(row=6, column=5)
-    '''
-    #return wList
+    tempMinLabel1.config(text="Min Temperature: " + str(wList[2]) + ' C')
+    tempMaxLabel1.config(text="Max Temperature: " + str(wList[3]) + ' C')
+    pressureLabel1.config(text="Pressure: " + str(wList[4]) + " hPa")
+    humidityLabel1.config(text="Humidity: " + str(wList[5]) + " %")
 
 # SUBMIT BUTTON
 submit_btn1 = Button(root, text="SUBMIT", command=lambda: submit(entry1.get()))
@@ -102,11 +87,11 @@ tempMinLabel1.grid(row=3, column=0)
 tempMaxLabel1 = Label(root, text="Max Temperature: ")
 tempMaxLabel1.grid(row=4, column=0)
 
-pressureLabel = Label(root, text="Pressure: ")
-pressureLabel.grid(row=5, column=0)
+pressureLabel1 = Label(root, text="Pressure: ")
+pressureLabel1.grid(row=5, column=0)
 
-humidityLabel = Label(root, text="Humidity: ")
-humidityLabel.grid(row=6, column=0)
+humidityLabel1 = Label(root, text="Humidity: ")
+humidityLabel1.grid(row=6, column=0)
 
 
 mainloop()
