@@ -24,11 +24,15 @@ def getWeather(location):
     
     f = open("apikey.txt", "r")
     apiKey = f.read()
-    response = "http://api.openweathermap.org/geo/1.0/direct?q=" + location + "&limit=8&appid=" + apiKey
+    response = requests.get("http://api.openweathermap.org/geo/1.0/direct?q=" + location + "&limit=8&appid=" + apiKey)
     print(location)
-    responseInfo = requests.get(response);
-    lat = responseInfo.json()[0]["lat"]
-    lon = responseInfo.json()[0]["lon"]
+    responseInfo = response.json();
+    if len(responseInfo) == 0:
+        wList = ["invalid"]*6
+        return wList
+    
+    lat = responseInfo[0]["lat"]
+    lon = responseInfo[0]["lon"]
 
     response2 = "https://api.openweathermap.org/data/2.5/weather?lat=" + str(lat) + "&lon=" + str(lon) + "&appid=" + apiKey
 
