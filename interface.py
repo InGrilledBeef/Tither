@@ -62,9 +62,11 @@ def submit(location):
     print(wList)
 
     # Location Labels (use config function)
-    tempLabel1 = Label(root, text=str(wList[0])+' C')
-    tempLabel1.grid(row=1, column=5)
+    #tempLabel1 = Label(root, text=str(wList[0])+' C')
+    #tempLabel1.grid(row=1, column=5)
 
+    tempLabel1.config(text = "Temperature: " + str(wList[0])+' C')
+    flLabel1.config(text="Feels Like: " + str(wList[1]) + ' C')
     '''
     flLabel1 = Label(root, text=str(wList[1]))
     flLabel1.grid(row=2, column=5)

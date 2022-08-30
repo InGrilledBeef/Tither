@@ -37,6 +37,7 @@ def getWeather(location):
     #jprint(info.json())
     #jprint(int(info.json()["main"]["temp"])-273)
     wList.append(jtext(int(info.json()["main"]["temp"])-273))
+    wList.append(jtext(int(info.json()["main"]["feels_like"])-273))
 
     return wList
 
