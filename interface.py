@@ -23,14 +23,14 @@ def resizeImg(path):
 image1 = resizeImg("images/1.png")
 my_img1 = ImageTk.PhotoImage(image1)
 my_label1 = Label(image=my_img1)
-my_label1.grid(row=0, column=0, columnspan=7, rowspan=8)
+my_label1.grid(row=0, column=0, rowspan=8, columnspan=7)
 
-'''
 image2 = resizeImg("images/2.png")
 my_img2 = ImageTk.PhotoImage(image2)
 my_label2 = Label(image=my_img2)
-my_label2.grid(row=0, column=1)
+my_label2.grid(row=0, column=8, rowspan=8, columnspan=7)
 
+'''
 image3 = resizeImg("images/3.png")
 my_img3 = ImageTk.PhotoImage(image3)
 my_label3 = Label(image=my_img3)
@@ -43,18 +43,18 @@ my_label4.grid(row=1, column=1)
 '''
 
 # ENTRY BOXES
+
 entry1 = Entry(root, width = "30")
 entry1.grid(row=0, column=0, columnspan=7)
 
+entry2 = Entry(root, width = "30")
+entry2.grid(row=0, column=8, columnspan=7)
 '''
-entry2 = Entry(root, width = "50")
-entry2.grid(row=0, column=1)
+entry3 = Entry(root, width = "30")
+entry3.grid(row=1, column=0, columnspan=7)
 
-entry3 = Entry(root, width = "50")
-entry3.grid(row=1, column=0)
-
-entry4 = Entry(root, width = "50")
-entry4.grid(row=1, column=1)
+entry4 = Entry(root, width = "30")
+entry4.grid(row=1, column=1, columnspan=7)
 '''
 
 def submit(location):
@@ -70,9 +70,10 @@ def submit(location):
     pressureLabel1.config(text="Pressure: " + str(wList[4]) + " hPa")
     humidityLabel1.config(text="Humidity: " + str(wList[5]) + " %")
 
+
 # SUBMIT BUTTON
 submit_btn1 = Button(root, text="SUBMIT", command=lambda: submit(entry1.get()))
-submit_btn1.grid(row=8, column=3)
+submit_btn1.grid(row=7, column=1)
 
 # Text Labels
 tempLabel1 = Label(root, text="Temperature: ")
