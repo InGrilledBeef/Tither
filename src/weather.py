@@ -11,10 +11,6 @@
 import requests
 import json
 
-def jprint(obj):
-    text = json.dumps(obj, sort_keys=True, indent=4)
-    print(text)
-
 def jtext(obj):
     text = json.dumps(obj, sort_keys=True, indent=4)
     return text
@@ -25,7 +21,6 @@ def getWeather(location):
     f = open("apikey.txt", "r")
     apiKey = f.read()
     response = requests.get("http://api.openweathermap.org/geo/1.0/direct?q=" + location + "&limit=8&appid=" + apiKey)
-    print(location)
     responseInfo = response.json();
     if len(responseInfo) == 0:
         wList = ["invalid"]*6
@@ -44,4 +39,5 @@ def getWeather(location):
     wList.append(jtext(int(info.json()["main"]["temp_max"])-273))
     wList.append(jtext(int(info.json()["main"]["pressure"])))
     wList.append(jtext(int(info.json()["main"]["humidity"])))
+    
     return wList
